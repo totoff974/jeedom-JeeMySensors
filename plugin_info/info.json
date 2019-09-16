@@ -9,8 +9,8 @@
 	"hasDependency" : false,
 	"hasOwnDeamon" : true,
 	"maxDependancyInstallTime" : 120,
-	"changelog" : "https://totoff974.github.io/plugin-JeeMySensors/#language#/changelog",
-	"documentation" : "https://totoff974.github.io/plugin-JeeMySensors/#language#/",
+	"changelog" : "https://totoff974.github.io/jeedom-JeeMySensors/#language#/changelog",
+	"documentation" : "https://totoff974.github.io/jeedom-JeeMySensors/#language#/",
 	"link" : {
 		"forum":"Lien vers le forum",
 		"video" : "Lien vers une video"
