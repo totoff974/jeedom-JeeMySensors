@@ -53,7 +53,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
                         echo '<br>';
                         echo '<span class="name">' . $eqLogic_node->getHumanName(true, true) . '</span>';
                         echo '</div>';
-                        foreach ($eqLogics as $eqLogic_sensor) {
+                        foreach ($eqLogic_node as $eqLogic_sensor) {
                             if ($eqLogic_sensor->getConfiguration('id_node_gw') === $eqLogic->getId()) {
                                 if (strpos($eqLogic_sensor->getLogicalId(), 'Sensor-'.$eqLogic_node->getConfiguration('id_node')) === 0) {
                                     $opacity = ($eqLogic_sensor->getIsEnable()) ? '' : 'disableCard';
