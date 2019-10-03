@@ -184,13 +184,13 @@ $eqLogics = eqLogic::byType($plugin->getId());
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">{{Id Jeedom Gateway}}</label>
                                     <div class="col-sm-3">
-                                        <input type="text" style="color:white;width:100%" readonly class="eqLogicAttr btn btn-default btn-sm" data-l1key="configuration" data-l2key="id_node_gw" />
+                                        <input type="text" style="width:100%" readonly class="eqLogicAttr btn btn-default btn-sm" data-l1key="configuration" data-l2key="id_node_gw" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">{{Id Sensor}}</label>
                                         <div class="col-sm-3">
-                                            <input type="text" style="color:white;width:100%" readonly class="eqLogicAttr btn btn-default btn-sm" data-l1key="configuration" data-l2key="id_sensor" />
+                                            <input type="text" style="width:100%" readonly class="eqLogicAttr btn btn-default btn-sm" data-l1key="configuration" data-l2key="id_sensor" />
                                         </div>
                                 </div>
                             </div>
@@ -198,20 +198,20 @@ $eqLogics = eqLogic::byType($plugin->getId());
                                 <label class="col-sm-3 control-label">{{Rôle}}</label>
                                 <div class="col-sm-3">
                                     <input type="hidden" class="eqLogicAttr btn btn-default btn-sm" data-l1key="configuration" data-l2key="id_role"/>
-                                    <input type="text" style="color:white;width:100%" readonly class="eqLogicAttr btn btn-default btn-sm" data-l1key="configuration" data-l2key="role"/>
+                                    <input type="text" style="width:100%" readonly class="eqLogicAttr btn btn-default btn-sm" data-l1key="configuration" data-l2key="role"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">{{Id Node}}</label>
                                 <div class="col-sm-3">
-                                    <input type="text" style="color:white;width:100%" readonly class="eqLogicAttr btn btn-default btn-sm" data-l1key="configuration" data-l2key="id_node" />
+                                    <input type="text" style="width:100%" readonly class="eqLogicAttr btn btn-default btn-sm" data-l1key="configuration" data-l2key="id_node" />
                                 </div>
                             </div>
                             <div id="isNodeAndGateway">
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">{{Version}}</label>
                                         <div class="col-sm-3">
-                                            <input type="text" style="color:white;width:100%" readonly class="eqLogicAttr btn btn-default btn-sm" data-l1key="configuration" data-l2key="version" />
+                                            <input type="text" style="width:100%" readonly class="eqLogicAttr btn btn-default btn-sm" data-l1key="configuration" data-l2key="version" />
                                         </div>
                                 </div>
                                 <div class="form-group">
@@ -222,19 +222,19 @@ $eqLogics = eqLogic::byType($plugin->getId());
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">{{Sketch Version}}</label>
                                         <div class="col-sm-3">
-                                            <input type="text" style="color:white;width:100%" readonly class="eqLogicAttr btn btn-default btn-sm" data-l1key="configuration" data-l2key="sketch_version" />
+                                            <input type="text" style="width:100%" readonly class="eqLogicAttr btn btn-default btn-sm" data-l1key="configuration" data-l2key="sketch_version" />
                                         </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">{{Nom du Sketch}}</label>
                                         <div class="col-sm-3">
-                                            <input type="text" style="color:white;width:100%" readonly class="eqLogicAttr btn btn-default btn-sm" data-l1key="configuration" data-l2key="sketch_name" />
+                                            <input type="text" style="width:100%" readonly class="eqLogicAttr btn btn-default btn-sm" data-l1key="configuration" data-l2key="sketch_name" />
                                         </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">{{Etat de la batterie %}}</label>
                                         <div class="col-sm-3">
-                                            <input type="text" style="color:white;width:100%" readonly class="eqLogicAttr btn btn-default btn-sm" data-l1key="configuration" data-l2key="node_batterie" />
+                                            <input type="text" style="width:100%" readonly class="eqLogicAttr btn btn-default btn-sm" data-l1key="configuration" data-l2key="node_batterie" />
                                         </div>
                                 </div>
                                 <div class="form-group">
