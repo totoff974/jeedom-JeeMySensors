@@ -144,7 +144,7 @@ class JeeMySensors extends eqLogic {
     /*     * *********************Méthodes d'instance************************* */
 
     public function preInsert() {
-
+        $this->setConfiguration('autoInclude', 1);
     }
 
     public function postInsert() {
