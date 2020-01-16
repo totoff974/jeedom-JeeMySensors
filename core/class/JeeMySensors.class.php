@@ -26,6 +26,20 @@ class JeeMySensors extends eqLogic {
 
 
     /*     * ***********************Methode static*************************** */
+    public static function dependancy_info() {
+        $return = array();
+        $return['progress_file'] = jeedom::getTmpFolder('JeeMySensors') . '/dependance';
+        if (exec(system::getCmdSudo() . system::get('cmd_check') . '-E "python\-serial|python\-request|python\-pyudev" | wc -l') >= 3) {
+            $return['state'] = 'ok';
+        } else {
+            $return['state'] = 'nok';
+        }
+        return $return;
+    }
+    public static function dependancy_install() {
+        log::remove(__CLASS__ . '_update');
+        return array('script' => dirname(__FILE__) . '/../../resources/install_#stype#.sh ' . jeedom::getTmpFolder('JeeMySensors') . '/dependance', 'log' => log::getPathToLog(__CLASS__ . '_update'));
+    }
 
     public static function deamon_info() {
         $return = array();
