@@ -6,7 +6,7 @@
 	"author" : "Christophe CHAMANT",
 	"require" : "3.2",
 	"category" : "automation protocol",
-	"hasDependency" : false,
+	"hasDependency" : true,
 	"hasOwnDeamon" : true,
 	"maxDependancyInstallTime" : 120,
 	"changelog" : "https://totoff974.github.io/jeedom-JeeMySensors/#language#/changelog",
