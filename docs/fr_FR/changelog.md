@@ -1,6 +1,11 @@
 Changelog détaillé :
 <https://github.com/totoff974/JeeMySensors/commits/master>
 
+17-01-2020 17:00
+===
+
+-   modification encodage install_apt.sh
+
 16-01-2020 16:30
 ===
 
