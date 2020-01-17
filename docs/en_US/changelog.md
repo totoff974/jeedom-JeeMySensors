@@ -1,11 +1,16 @@
 Changelog detailed: <https://github.com/totoff974/JeeMySensors/commits/master>
 
+16-01-2020 16:30
+===
+
+-   dependancy_install
+
 03-10-2019 15:30
 ===
 
--   Correction of color display for equipment configuration info page
+-   Correction de la couleur affichage des infos page configuration des équipements
 
 24-09-2019 16:00
 ===
 
--   Correction of sensors display (once)
+-   Correction de l'affichage des sensors (une seule fois)

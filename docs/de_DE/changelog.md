@@ -1,6 +1,11 @@
 Changelog détaillé :
 <https://github.com/totoff974/JeeMySensors/commits/master>
 
+16-01-2020 16:30
+===
+
+-   dependancy_install
+
 03-10-2019 15:30
 ===
 
