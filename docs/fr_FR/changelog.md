@@ -1,6 +1,11 @@
 Changelog détaillé :
 <https://github.com/totoff974/JeeMySensors/commits/master>
 
+13-02-2022 10:00
+===
+
+- Correction de l'auto-création de commande d'un noeud : la propriété 'isVisible' en tant que boolean n'était pas reconnu en cas de valeur 'false' (traduit en chaîne vide au lieu de 0).
+
 17-01-2020 17:00
 ===
 
