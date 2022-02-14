@@ -176,6 +176,45 @@ function addCmdToTable(_cmd) {
     tr += '<span class="type" type="' + init(_cmd.type) + '">' + jeedom.cmd.availableType() + '</span>';
     tr += '<span class="subType" subType="' + init(_cmd.subType) + '"></span>';
     tr += '</td>';
+
+    // Add some fields for info and action type
+    // Sensor type or command
+    tr += '<td>';
+        // Sensor type
+        tr += '<select class="cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="sensorCategory" data-jms-type="info">';
+        $.each(jeeMySensorsDictionary['S'], function(index, item) {
+            tr += '<option value="' + index + '">' + index + ' - ' + item[0] + '</option>';
+        });
+        tr += '</select>';
+        // Command
+        tr += '<select class="cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="cmdCommand" data-jms-type="action">';
+            $.each(jeeMySensorsDictionary['C'], function(index, item) {
+                tr += '<option value="' + index + '">' + index + ' - ' + item + '</option>';
+            });
+        tr += '</select>';
+    tr += '</td>';
+
+    // Value: request
+    tr += '<td>';
+        tr += '<input class="tooltips cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="request" placeholder="{{Valeur}}" title="{{Valeur}}" data-jms-type="action"/>';
+    tr += '</td>';
+
+    // Sensor data type
+    tr += '<td>';
+        // Data type for info
+        tr += '<select class="cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="sensorType" data-jms-type="info">';
+        $.each(jeeMySensorsDictionary['V'], function(index, item) {
+            tr += '<option value="' + index + '">' + index + ' - ' + item[0] + '</option>';
+        });
+        tr += '</select>';
+        // Data type for action
+        tr += '<select class="cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="cmdType" data-jms-type="action">';
+        $.each(jeeMySensorsDictionary['V'], function(index, item) {
+            tr += '<option value="' + index + '">' + index + ' - ' + item[0] + '</option>';
+        });
+        tr += '</select>';
+    tr += '</td>';
+
     tr += '<td>';
     tr += '<input class="tooltips cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="minValue" placeholder="{{Min}}" title="{{Min}}" style="width:30%;display:inline-block;">';
     tr += ' <input class="tooltips cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="maxValue" placeholder="{{Max}}" title="{{Max}}" style="width:30%;display:inline-block;">';
@@ -205,6 +244,33 @@ function addCmdToTable(_cmd) {
             tr.find('.cmdAttr[data-l1key=value]').append(result);
             tr.setValues(_cmd, '.cmdAttr');
             jeedom.cmd.changeType(tr, init(_cmd.subType));
+
+            let $type = tr.find('.cmdAttr[data-l1key=type]');
+            // Add event
+            $type.on('change', typeChangeHandler);
+            // Trigger now to force show/hide fields
+            typeChangeHandler({currentTarget: $type});
+
         }
     });
+}
+
+/**
+ * When type value change
+ *
+ * @param {Object} e
+ */
+function typeChangeHandler(e) {
+    let $type = $(e.currentTarget);
+    let typeValue = $type.value();
+    let $tr = $type.parents('tr');
+
+    if (typeValue == 'action') {
+        $tr.find('td [data-jms-type=action]').show();
+        $tr.find('td [data-jms-type=info]').hide();
+    }
+    else if (typeValue == 'info') {
+        $tr.find('td [data-jms-type=info]').show();
+        $tr.find('td [data-jms-type=action]').hide();
+    }
 }
