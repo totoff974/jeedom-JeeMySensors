@@ -189,7 +189,7 @@ function addCmdToTable(_cmd) {
         // Command
         tr += '<select class="cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="cmdCommand" data-jms-type="action">';
             $.each(jeeMySensorsDictionary['C'], function(index, item) {
-                tr += '<option value="' + index + '">' + index + ' - ' + item + '</option>';
+                tr += '<option value="' + index + '"' + (index === 1 ? ' selected="selected"' : '') + '>' + index + ' - ' + item + '</option>';
             });
         tr += '</select>';
     tr += '</td>';

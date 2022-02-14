@@ -1138,7 +1138,7 @@ class JeeMySensorsCmd extends cmd {
                         case 'down':
                             $type = '30';                           // 28 -> V_DOWN
                             $payload = '';                          //
-                            break;;
+                            break;
                         case 'stop':
                             $type = '31';                           // 31 -> V_STOP
                             $payload = '';                          //
@@ -1157,6 +1157,37 @@ class JeeMySensorsCmd extends cmd {
                         $type = '47';                                // 3 -> V_TEXT
                         $payload = $_options['message'];             //
                     break;
+            }
+
+            // Override by defined configuration
+            if ($this->getType() === 'action') {
+
+                $cmdCommand = $this->getConfiguration('cmdCommand');
+                $request = $this->getConfiguration('request');
+                $cmdType = $this->getConfiguration('cmdType');
+
+                // Change $command if not empty
+                if (!empty($cmdCommand)) {
+                    $command = $cmdCommand;
+                }
+
+                // Request
+                if ($request !== '') {
+                    if ($request === '#slider#') {
+                        $payload = $_options['slider'];
+                    } else if ($request === '#color#') {
+                        $payload = $_options['color'];
+                    } else if ($request === '#message#') {
+                        $payload = $_options['message'];
+                    } else {
+                        $payload = $request;
+                    }
+                }
+
+                // Type
+                if (!empty($cmdType)) {
+                    $type = $cmdType;
+                }
             }
 
             /**
