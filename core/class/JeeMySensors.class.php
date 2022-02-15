@@ -19,7 +19,10 @@
 /* * ***************************Includes********************************* */
 require_once __DIR__  . '/../../../../core/php/core.inc.php';
 
-class JeeMySensors extends eqLogic {
+class JeeMySensors extends eqLogic
+{
+    const ROLE_GATEWAY = 'Gateway';
+    const ROLE_NODE = 'Périphérique Arduino';
 
     /**
      * @var array MySensors dictionary
@@ -468,7 +471,7 @@ class JeeMySensors extends eqLogic {
 
     public function preSave() {
         if ($this->getConfiguration('role') === '') {
-            $this->setConfiguration('role', 'Gateway');
+            $this->setConfiguration('role', self::ROLE_GATEWAY);
             $this->setConfiguration('timeout', 60);
             $this->setConfiguration('modeInclude', 1);
             $this->setConfiguration('autoInclude', 0);
@@ -477,7 +480,7 @@ class JeeMySensors extends eqLogic {
 
     public function postSave() {
         if ($this->getConfiguration('role') === '') {
-            $this->setConfiguration('role', 'Gateway');
+            $this->setConfiguration('role', self::ROLE_GATEWAY);
             $this->setConfiguration('timeout', 60);
             $this->setConfiguration('modeInclude', 1);
             $this->setConfiguration('autoInclude', 0);
@@ -489,7 +492,7 @@ class JeeMySensors extends eqLogic {
     }
 
     public function postUpdate() {
-        if ($this->getConfiguration('role') === 'Gateway' && !empty($this->getConfiguration('type_gw')) && (!empty($this->getConfiguration('port_gw')) || !empty($this->getConfiguration('ip_gw')))) {
+        if ($this->getConfiguration('role') === self::ROLE_GATEWAY && !empty($this->getConfiguration('type_gw')) && (!empty($this->getConfiguration('port_gw')) || !empty($this->getConfiguration('ip_gw')))) {
             $gateway = $this->getId();
             $hearbeat = intval($this->getConfiguration('timeout'));
             if ($this->getIsEnable() == 1) {
@@ -767,7 +770,7 @@ class JeeMySensors extends eqLogic {
         $idjeedom = self::byId($id_gw_jeedom, 'JeeMySensors');
         if (is_object($idjeedom)) {
             // modification de la version pour le gateway
-            if ($idjeedom->getConfiguration('id_node') === $id_node && $idjeedom->getConfiguration('role') === 'Gateway') {
+            if ($idjeedom->getConfiguration('id_node') === $id_node && $idjeedom->getConfiguration('role') === self::ROLE_GATEWAY) {
                 $idlogic = 'GW-' . $id_gw_jeedom . '-' . $id_node;
                 $modif = 0;
                 log::add('JeeMySensors', 'info', '     \___ LogicalId Node GW: ' . $idlogic . ' existe.');
@@ -999,9 +1002,9 @@ class JeeMySensors extends eqLogic {
                 $idjeedom->setConfiguration('id_node', $id_node);
                 if ($modif !== 1) { $modif = 1; }
             }
-            if ($idjeedom->getConfiguration('role') !== 'Gateway') {
+            if ($idjeedom->getConfiguration('role') !== self::ROLE_GATEWAY) {
                 log::add('JeeMySensors', 'info', '         \___ Modification du rôle : ' . $idjeedom->getConfiguration('role') . ' en -> Gateway');
-                $idjeedom->setConfiguration('role', 'Gateway');
+                $idjeedom->setConfiguration('role', self::ROLE_GATEWAY);
                 if ($modif !== 1) { $modif = 1; }
             }
             if ($idjeedom->getConfiguration('type_co') !== $typeOfco) {
@@ -1024,7 +1027,7 @@ class JeeMySensors extends eqLogic {
             $JMS->setName('Gateway');
             $JMS->setLogicalId($idlogic);
             $JMS->setConfiguration('id_node', $id_node);
-            $JMS->setConfiguration('role', 'Gateway');
+            $JMS->setConfiguration('role', self::ROLE_GATEWAY);
             $JMS->setConfiguration('type_co', $typeOfco);
             $JMS->setConfiguration('timeout', 10);
             $JMS->setConfiguration('modeInclude', 1);
