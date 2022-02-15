@@ -1,6 +1,11 @@
 Changelog détaillé :
 <https://github.com/totoff974/JeeMySensors/commits/master>
 
+15-02-2022 15:00
+===
+
+- Sur les commandes de type 'action', possibilité de spécifier la valeur ainsi que le type de donnée à transmettre.
+
 13-02-2022 10:00
 ===
 
