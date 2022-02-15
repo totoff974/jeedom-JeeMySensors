@@ -190,64 +190,64 @@ class JeeMySensors extends eqLogic
      */
     static public $_cmdDefaults = array(
         'S_DOOR' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'binary', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'OPENING', 'forceReturnLineAfter' => '1', 'templateDas' => 'door', 'templateMob' => 'door'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'binary', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'OPENING', 'forceReturnLineAfter' => '1', 'templateDas' => 'door', 'templateMob' => 'door', 'vType' => 2),
         ),
         'S_MOTION' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'binary', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'PRESENCE', 'forceReturnLineAfter' => '1', 'templateDas' => 'presence', 'templateMob' => 'presence'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'binary', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'PRESENCE', 'forceReturnLineAfter' => '1', 'templateDas' => 'presence', 'templateMob' => 'presence', 'vType' => 2),
         ),
         'S_SMOKE' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'binary', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'SMOKE', 'forceReturnLineAfter' => '1', 'templateDas' => 'alert', 'templateMob' => 'alert'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'binary', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'SMOKE', 'forceReturnLineAfter' => '1', 'templateDas' => 'alert', 'templateMob' => 'alert', 'vType' => 2),
         ),
         'S_BINARY' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'binary', 'order' => 1, 'isVisible' => 0, 'generic_type' => 'LIGHT_STATE', 'forceReturnLineAfter' => '1', 'templateDas' => 'light', 'templateMob' => 'light'),
-            array('name' => 'On',   'logicalId' => 'on',   'type' => 'action', 'subType' => 'other',  'order' => 2, 'isVisible' => 1,  'generic_type' => 'LIGHT_ON',    'forceReturnLineAfter' => '0', 'templateDas' => 'light', 'templateMob' => 'light'),
-            array('name' => 'Off',  'logicalId' => 'off',  'type' => 'action', 'subType' => 'other',  'order' => 3, 'isVisible' => 1,  'generic_type' => 'LIGHT_OFF',   'forceReturnLineAfter' => '0', 'templateDas' => 'light', 'templateMob' => 'light'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'binary', 'order' => 1, 'isVisible' => 0, 'generic_type' => 'LIGHT_STATE', 'forceReturnLineAfter' => '1', 'templateDas' => 'light', 'templateMob' => 'light', 'vType' => 2),
+            array('name' => 'On',   'logicalId' => 'on',   'type' => 'action', 'subType' => 'other',  'order' => 2, 'isVisible' => 1,  'generic_type' => 'LIGHT_ON',    'forceReturnLineAfter' => '0', 'templateDas' => 'light', 'templateMob' => 'light', 'vType' => 2),
+            array('name' => 'Off',  'logicalId' => 'off',  'type' => 'action', 'subType' => 'other',  'order' => 3, 'isVisible' => 1,  'generic_type' => 'LIGHT_OFF',   'forceReturnLineAfter' => '0', 'templateDas' => 'light', 'templateMob' => 'light', 'vType' => 2),
         ),
         'S_DIMMER' => array(
-            array('name' => 'Etat',        'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 0, 'generic_type' => 'LIGHT_STATE',    'forceReturnLineAfter' => '1', 'templateDas' => 'default', 'templateMob' => 'default'),
-            array('name' => 'Intensité',   'logicalId' => 'dim',  'type' => 'action', 'subType' => 'slider',  'order' => 2, 'isVisible' => 1,  'generic_type' => 'LIGHT_SLIDER',    'forceReturnLineAfter' => '1', 'templateDas' => 'light', 'templateMob' => 'light'),
-            array('name' => 'On',          'logicalId' => 'on',   'type' => 'action', 'subType' => 'other',   'order' => 3, 'isVisible' => 1,  'generic_type' => 'LIGHT_ON',        'forceReturnLineAfter' => '0', 'templateDas' => 'light', 'templateMob' => 'light'),
-            array('name' => 'Off',         'logicalId' => 'off',  'type' => 'action', 'subType' => 'other',   'order' => 4, 'isVisible' => 1,  'generic_type' => 'LIGHT_OFF',       'forceReturnLineAfter' => '0', 'templateDas' => 'light', 'templateMob' => 'light'),
+            array('name' => 'Etat',        'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 0, 'generic_type' => 'LIGHT_STATE',    'forceReturnLineAfter' => '1', 'templateDas' => 'default', 'templateMob' => 'default', 'vType' => 2),
+            array('name' => 'Intensité',   'logicalId' => 'dim',  'type' => 'action', 'subType' => 'slider',  'order' => 2, 'isVisible' => 1,  'generic_type' => 'LIGHT_SLIDER',    'forceReturnLineAfter' => '1', 'templateDas' => 'light', 'templateMob' => 'light', 'vType' => 2, 'request' => '#slider#'),
+            array('name' => 'On',          'logicalId' => 'on',   'type' => 'action', 'subType' => 'other',   'order' => 3, 'isVisible' => 1,  'generic_type' => 'LIGHT_ON',        'forceReturnLineAfter' => '0', 'templateDas' => 'light', 'templateMob' => 'light', 'vType' => 2, 'request' => '1'),
+            array('name' => 'Off',         'logicalId' => 'off',  'type' => 'action', 'subType' => 'other',   'order' => 4, 'isVisible' => 1,  'generic_type' => 'LIGHT_OFF',       'forceReturnLineAfter' => '0', 'templateDas' => 'light', 'templateMob' => 'light', 'vType' => 2, 'request' => '0'),
         ),
         'S_COVER' => array(
-            array('name' => 'Etat',        'logicalId' => 'etat',   'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 0, 'generic_type' => 'FLAP_STATE',    'forceReturnLineAfter' => '1', 'templateDas' => 'shutter', 'templateMob' => 'shutter'),
-            array('name' => 'Position',    'logicalId' => 'dim',    'type' => 'action', 'subType' => 'slider',  'order' => 2, 'isVisible' => 1,  'generic_type' => 'FLAP_SLIDER',    'forceReturnLineAfter' => '1', 'templateDas' => 'shutter', 'templateMob' => 'shutter'),
-            array('name' => 'Monter',      'logicalId' => 'up',     'type' => 'action', 'subType' => 'other',   'order' => 3, 'isVisible' => 1,  'generic_type' => 'FLAP_UP',        'forceReturnLineAfter' => '0', 'templateDas' => 'default', 'templateMob' => 'default'),
-            array('name' => 'Descendre',   'logicalId' => 'down',   'type' => 'action', 'subType' => 'other',   'order' => 4, 'isVisible' => 1,  'generic_type' => 'FLAP_DOWN',       'forceReturnLineAfter' => '0', 'templateDas' => 'default', 'templateMob' => 'default'),
-            array('name' => 'Stop',        'logicalId' => 'stop',   'type' => 'action', 'subType' => 'other',   'order' => 5, 'isVisible' => 1,  'generic_type' => 'FLAP_STOP',       'forceReturnLineAfter' => '0', 'templateDas' => 'default', 'templateMob' => 'default'),
+            array('name' => 'Etat',        'logicalId' => 'etat',   'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 0, 'generic_type' => 'FLAP_STATE',    'forceReturnLineAfter' => '1', 'templateDas' => 'shutter', 'templateMob' => 'shutter', 'vType' => 2),
+            array('name' => 'Position',    'logicalId' => 'dim',    'type' => 'action', 'subType' => 'slider',  'order' => 2, 'isVisible' => 1,  'generic_type' => 'FLAP_SLIDER',    'forceReturnLineAfter' => '1', 'templateDas' => 'shutter', 'templateMob' => 'shutter', 'vType' => 2, 'request' => '#slider#'),
+            array('name' => 'Monter',      'logicalId' => 'up',     'type' => 'action', 'subType' => 'other',   'order' => 3, 'isVisible' => 1,  'generic_type' => 'FLAP_UP',        'forceReturnLineAfter' => '0', 'templateDas' => 'default', 'templateMob' => 'default', 'vType' => 29, 'request' => ''),
+            array('name' => 'Descendre',   'logicalId' => 'down',   'type' => 'action', 'subType' => 'other',   'order' => 4, 'isVisible' => 1,  'generic_type' => 'FLAP_DOWN',       'forceReturnLineAfter' => '0', 'templateDas' => 'default', 'templateMob' => 'default', 'vType' => 30, 'request' => ''),
+            array('name' => 'Stop',        'logicalId' => 'stop',   'type' => 'action', 'subType' => 'other',   'order' => 5, 'isVisible' => 1,  'generic_type' => 'FLAP_STOP',       'forceReturnLineAfter' => '0', 'templateDas' => 'default', 'templateMob' => 'default', 'vType' => 31, 'request' => ''),
         ),
         'S_TEMP' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'TEMPERATURE', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'TEMPERATURE', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_HUM' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'HUMIDITY', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'HUMIDITY', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_BARO' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'string', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'PRESSURE', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'string', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'PRESSURE', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_WIND' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'WIND_SPEED', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'WIND_SPEED', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_RAIN' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'RAIN_CURRENT', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'RAIN_CURRENT', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_UV' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'UV', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'UV', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_WEIGHT' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_POWER' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'POWER', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'POWER', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_HEATER' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'binary', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'HEATING_STATE', 'forceReturnLineAfter' => '1', 'templateDas' => 'heat', 'templateMob' => 'heat'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'binary', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'HEATING_STATE', 'forceReturnLineAfter' => '1', 'templateDas' => 'heat', 'templateMob' => 'heat', 'vType' => 2),
         ),
         'S_DISTANCE' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_LIGHT_LEVEL' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'BRIGHTNESS', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'BRIGHTNESS', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_ARDUINO_NODE' => array(
 
@@ -256,74 +256,74 @@ class JeeMySensors extends eqLogic
 
         ),
         'S_LOCK' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'binary', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'LOCK_STATE', 'forceReturnLineAfter' => '1', 'templateDas' => 'lock', 'templateMob' => 'lock'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'binary', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'LOCK_STATE', 'forceReturnLineAfter' => '1', 'templateDas' => 'lock', 'templateMob' => 'lock', 'vType' => 2),
         ),
         'S_IR' => array(
 
         ),
         'S_WATER' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'CONSUMPTION', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'CONSUMPTION', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_AIR_QUALITY' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_CUSTOM' => array(
 
         ),
         'S_DUST' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_SCENE_CONTROLLER' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'binary', 'order' => 1, 'isVisible' => 0, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
-            array('name' => 'On',   'logicalId' => 'on',   'type' => 'action', 'subType' => 'other',  'order' => 2, 'isVisible' => 1, 'generic_type' => 'GENERIC',    'forceReturnLineAfter' => '0', 'templateDas' => 'default', 'templateMob' => 'default'),
-            array('name' => 'Off',  'logicalId' => 'off',  'type' => 'action', 'subType' => 'other',  'order' => 3, 'isVisible' => 1, 'generic_type' => 'GENERIC',   'forceReturnLineAfter' => '0', 'templateDas' => 'default', 'templateMob' => 'default'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'binary', 'order' => 1, 'isVisible' => 0, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
+            array('name' => 'On',   'logicalId' => 'on',   'type' => 'action', 'subType' => 'other',  'order' => 2, 'isVisible' => 1, 'generic_type' => 'GENERIC',    'forceReturnLineAfter' => '0', 'templateDas' => 'default', 'templateMob' => 'default', 'vType' => 2, 'request' => '1'),
+            array('name' => 'Off',  'logicalId' => 'off',  'type' => 'action', 'subType' => 'other',  'order' => 3, 'isVisible' => 1, 'generic_type' => 'GENERIC',   'forceReturnLineAfter' => '0', 'templateDas' => 'default', 'templateMob' => 'default', 'vType' => 2, 'request' => '0'),
         ),
         'S_RGB_LIGHT' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'string', 'order' => 1, 'isVisible' => 0, 'generic_type' => 'LIGHT_COLOR', 'forceReturnLineAfter' => '1', 'templateDas' => 'light', 'templateMob' => 'light'),
-            array('name' => 'On',   'logicalId' => 'on',   'type' => 'action', 'subType' => 'other',  'order' => 2, 'isVisible' => 1, 'generic_type' => 'LIGHT_COLOR',    'forceReturnLineAfter' => '0', 'templateDas' => 'light', 'templateMob' => 'light'),
-            array('name' => 'Off',  'logicalId' => 'off',  'type' => 'action', 'subType' => 'other',  'order' => 3, 'isVisible' => 1, 'generic_type' => 'LIGHT_COLOR',   'forceReturnLineAfter' => '0', 'templateDas' => 'light', 'templateMob' => 'light'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'string', 'order' => 1, 'isVisible' => 0, 'generic_type' => 'LIGHT_COLOR', 'forceReturnLineAfter' => '1', 'templateDas' => 'light', 'templateMob' => 'light', 'vType' => 2),
+            array('name' => 'On',   'logicalId' => 'on',   'type' => 'action', 'subType' => 'other',  'order' => 2, 'isVisible' => 1, 'generic_type' => 'LIGHT_COLOR',    'forceReturnLineAfter' => '0', 'templateDas' => 'light', 'templateMob' => 'light', 'vType' => 2, 'request' => '1'),
+            array('name' => 'Off',  'logicalId' => 'off',  'type' => 'action', 'subType' => 'other',  'order' => 3, 'isVisible' => 1, 'generic_type' => 'LIGHT_COLOR',   'forceReturnLineAfter' => '0', 'templateDas' => 'light', 'templateMob' => 'light', 'vType' => 2, 'request' => '0'),
         ),
         'S_RGBW_LIGHT' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'string', 'order' => 1, 'isVisible' => 0, 'generic_type' => 'LIGHT_COLOR', 'forceReturnLineAfter' => '1', 'templateDas' => 'light', 'templateMob' => 'light'),
-            array('name' => 'On',   'logicalId' => 'on',   'type' => 'action', 'subType' => 'other',  'order' => 2, 'isVisible' => 1, 'generic_type' => 'LIGHT_COLOR',    'forceReturnLineAfter' => '0', 'templateDas' => 'light', 'templateMob' => 'light'),
-            array('name' => 'Off',  'logicalId' => 'off',  'type' => 'action', 'subType' => 'other',  'order' => 3, 'isVisible' => 1, 'generic_type' => 'LIGHT_COLOR',   'forceReturnLineAfter' => '0', 'templateDas' => 'light', 'templateMob' => 'light'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'string', 'order' => 1, 'isVisible' => 0, 'generic_type' => 'LIGHT_COLOR', 'forceReturnLineAfter' => '1', 'templateDas' => 'light', 'templateMob' => 'light', 'vType' => 2),
+            array('name' => 'On',   'logicalId' => 'on',   'type' => 'action', 'subType' => 'other',  'order' => 2, 'isVisible' => 1, 'generic_type' => 'LIGHT_COLOR',    'forceReturnLineAfter' => '0', 'templateDas' => 'light', 'templateMob' => 'light', 'vType' => 2, 'request' => '1'),
+            array('name' => 'Off',  'logicalId' => 'off',  'type' => 'action', 'subType' => 'other',  'order' => 3, 'isVisible' => 1, 'generic_type' => 'LIGHT_COLOR',   'forceReturnLineAfter' => '0', 'templateDas' => 'light', 'templateMob' => 'light', 'vType' => 2, 'request' => '0'),
         ),
         'S_COLOR_SENSOR' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'string', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'LIGHT_COLOR', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'string', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'LIGHT_COLOR', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_HVAC' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'string', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'HEATING_STATE', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'string', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'HEATING_STATE', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_MULTIMETER' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'string', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'string', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_SPRINKLER' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'string', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'string', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_WATER_LEAK' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'binary', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'FLOOD', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'binary', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'FLOOD', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_SOUND' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_VIBRATION' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_MOISTURE' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_INFO' => array(
-            array('name' => 'Etat',   'logicalId' => 'etat', 'type' => 'info',   'subType' => 'string',   'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC_INFO',     'forceReturnLineAfter' => '1', 'templateDas' => 'default', 'templateMob' => 'default'),
-            array('name' => 'Texte',  'logicalId' => 'msg',  'type' => 'action', 'subType' => 'message',  'order' => 2, 'isVisible' => 1, 'generic_type' => 'GENERIC_ACTION',   'forceReturnLineAfter' => '0', 'templateDas' => 'default', 'templateMob' => 'default'),
+            array('name' => 'Etat',   'logicalId' => 'etat', 'type' => 'info',   'subType' => 'string',   'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC_INFO',     'forceReturnLineAfter' => '1', 'templateDas' => 'default', 'templateMob' => 'default', 'vType' => 2),
+            array('name' => 'Texte',  'logicalId' => 'msg',  'type' => 'action', 'subType' => 'message',  'order' => 2, 'isVisible' => 1, 'generic_type' => 'GENERIC_ACTION',   'forceReturnLineAfter' => '0', 'templateDas' => 'default', 'templateMob' => 'default', 'vType' => 2, 'request' => '#message#'),
         ),
         'S_GAS' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_GPS' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
         'S_WATER_QUALITY' => array(
-            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line'),
+            array('name' => 'Etat', 'logicalId' => 'etat', 'type' => 'info',   'subType' => 'numeric', 'order' => 1, 'isVisible' => 1, 'generic_type' => 'GENERIC', 'forceReturnLineAfter' => '1', 'templateDas' => 'line', 'templateMob' => 'line', 'vType' => 2),
         ),
     );
 
@@ -899,7 +899,7 @@ class JeeMySensors extends eqLogic
             $JMS->save();
             log::add('JeeMySensors', 'info', '     \___ Ajout des commandes / infos pour le type : ' . $type_nom);
             $short_id = $id_node . '-' . $id_sensor . ':' . $id_gw_jeedom;
-            $JMS->autoAjoutCommande($short_id, $type_S_nom);
+            $JMS->autoAjoutCommande($short_id, $type_S_nom, $type);
         }
     }
     /*     * *********************FONCTIONS INTERNAL************************* */
@@ -1050,11 +1050,13 @@ class JeeMySensors extends eqLogic
     }
 
     // Ajout des commandes et ou infos par défaut
-    public function autoAjoutCommande($idlogic_node, $type_S_nom) {
+    public function autoAjoutCommande($idlogic_node, $type_S_nom, $type)
+    {
         foreach (static::$_cmdDefaults[$type_S_nom] as $cmd) {
-           if (cmd::byEqLogicIdCmdName($this->getId(), $cmd['name']))
+            if (cmd::byEqLogicIdCmdName($this->getId(), $cmd['name'])) {
                 return;
-           if ($cmd) {
+            }
+            if ($cmd) {
                 $JeeMySensorsCmd = new JeeMySensorsCmd();
                 $JeeMySensorsCmd->setName(__($cmd['name'], __FILE__));
                 $JeeMySensorsCmd->setEqLogic_id($this->id);
@@ -1067,8 +1069,27 @@ class JeeMySensors extends eqLogic
                 $JeeMySensorsCmd->setDisplay('forceReturnLineAfter', $cmd['forceReturnLineAfter']);
                 $JeeMySensorsCmd->setTemplate('dashboard', $cmd['templateDas']);
                 $JeeMySensorsCmd->setTemplate('mobile', $cmd['templateMob']);
+
+                // Info
+               if ($JeeMySensorsCmd->getType() === 'info') {
+                   $JeeMySensorsCmd->setConfiguration('sensorCategory', $type);
+                   if (isset($cmd['vType'])) {
+                       $JeeMySensorsCmd->setConfiguration('sensorType', $cmd['vType']);
+                   }
+               }
+               // Action
+                else if ($JeeMySensorsCmd->getType() === 'action') {
+                    $JeeMySensorsCmd->setConfiguration('cmdCommand', 1); // Set
+                    if (isset($cmd['request'])) {
+                        $JeeMySensorsCmd->setConfiguration('request', $cmd['request']);
+                    }
+                    if (isset($cmd['vType'])) {
+                        $JeeMySensorsCmd->setConfiguration('cmdType', $cmd['vType']);
+                    }
+                }
+
                 $JeeMySensorsCmd->save();
-           }
+            }
         }
     }
 
