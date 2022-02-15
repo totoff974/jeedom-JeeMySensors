@@ -264,13 +264,19 @@ function typeChangeHandler(e) {
     let $type = $(e.currentTarget);
     let typeValue = $type.value();
     let $tr = $type.parents('tr');
+    let $actions = $tr.find('td [data-jms-type=action]');
+    let $infos = $tr.find('td [data-jms-type=info]');
 
     if (typeValue == 'action') {
-        $tr.find('td [data-jms-type=action]').show();
-        $tr.find('td [data-jms-type=info]').hide();
+        $actions.show();
+        $actions.attr('disabled', false);
+        $infos.hide();
+        $infos.attr('disabled', 'disabled');
     }
     else if (typeValue == 'info') {
-        $tr.find('td [data-jms-type=info]').show();
-        $tr.find('td [data-jms-type=action]').hide();
+        $infos.show();
+        $infos.attr('disabled', false);
+        $actions.hide();
+        $actions.attr('disabled', 'disabled');
     }
 }
