@@ -5,6 +5,7 @@ Changelog détaillé :
 ===
 
 - Sur les commandes de type 'action', possibilité de spécifier la valeur ainsi que le type de donnée à transmettre.
+- Modification de l'apparence de la liste des équipements (noeuds) : regroupement visuel des équipements (capteurs et noeud) par noeud.
 
 13-02-2022 10:00
 ===
