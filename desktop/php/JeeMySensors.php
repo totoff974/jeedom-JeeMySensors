@@ -28,7 +28,7 @@ foreach ($eqLogics as $eqLogic) {
         }
     }
     // node
-    else if ($role === JeeMySensors::ROLE_NODE) {
+    else if ($role === JeeMySensors::ROLE_NODE || $role === JeeMySensors::ROLE_REPEATER_NODE) {
         $idGw = $eqLogic->getConfiguration('id_node_gw');
         $idNode = $eqLogic->getConfiguration('id_node');
 
@@ -36,10 +36,11 @@ foreach ($eqLogics as $eqLogic) {
         if (!isset($eqLogicNodes[$idGw])) {
             $eqLogicNodes[$idGw] = [];
         }
-        $eqLogicNodes[$idGw][] = $eqLogic;
+        $eqLogicNodes[$idGw][$idNode] = $eqLogic;
     }
     // sensor
     else {
+        $idGw = $eqLogic->getConfiguration('id_node_gw');
         $idNode = $eqLogic->getConfiguration('id_node');
 
         // Push to sensor array
@@ -47,6 +48,11 @@ foreach ($eqLogics as $eqLogic) {
             $eqLogicSensors[$idNode] = [];
         }
         $eqLogicSensors[$idNode][] = $eqLogic;
+
+        // If node not found, create fake (normally no applied case, but keep this just in case of)
+        if (!isset($eqLogicNodes[$idGw][$idNode])) {
+            $eqLogicNodes[$idGw][$idNode] = null;
+        }
     }
 }
 ?>
@@ -88,20 +94,20 @@ foreach ($eqLogics as $eqLogic) {
 
         // Show all nodes from this gateway
         /** @var JeeMySensors $eqLogicNode */
-        foreach ($eqLogicNodes[$eqLogicGateway->getId()] as $eqLogicNode) {
-            $idNode = $eqLogicNode->getConfiguration('id_node');
-
+        foreach ($eqLogicNodes[$eqLogicGateway->getId()] as $idNode => $eqLogicNode) {
             // Node container
             echo '<div class="eqLogicNodeContainer">';
 
             // Node card
-            $opacity = ($eqLogicNode->getIsEnable()) ? '' : 'disableCard';
-            $iconPath = 'plugins/JeeMySensors/plugin_info/JeeMySensors_' . $eqLogicNode->getConfiguration('id_role') . '.png';
-            echo '<div class="eqLogicDisplayCard jms-node cursor '.$opacity.'" data-eqLogic_id="' . $eqLogicNode->getId() . '">
-                <img src="' . (file_exists($iconPath) ? $iconPath : $plugin->getPathImgIcon()) . '"/>
-                <br />
-                <span class="name">' . $eqLogicNode->getHumanName(true, true) . '</span>
-            </div>';
+            if (null !== $eqLogicNode) {
+                $opacity = ($eqLogicNode->getIsEnable()) ? '' : 'disableCard';
+                $iconPath = 'plugins/JeeMySensors/plugin_info/JeeMySensors_' . $eqLogicNode->getConfiguration('id_role') . '.png';
+                echo '<div class="eqLogicDisplayCard jms-node cursor ' . $opacity . '" data-eqLogic_id="' . $eqLogicNode->getId() . '">
+                    <img src="' . (file_exists($iconPath) ? $iconPath : $plugin->getPathImgIcon()) . '"/>
+                    <br />
+                    <span class="name">' . $eqLogicNode->getHumanName(true, true) . '</span>
+                </div>';
+            }
 
             // Show all sensor from this node
             foreach ($eqLogicSensors[$idNode] as $eqLogicSensor) {

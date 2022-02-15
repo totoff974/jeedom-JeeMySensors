@@ -23,6 +23,7 @@ class JeeMySensors extends eqLogic
 {
     const ROLE_GATEWAY = 'Gateway';
     const ROLE_NODE = 'Périphérique Arduino';
+    const ROLE_REPEATER_NODE = 'Périphérique de nœud répétitif Arduino';
 
     /**
      * @var array MySensors dictionary
