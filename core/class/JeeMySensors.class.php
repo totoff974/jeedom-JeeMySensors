@@ -1190,31 +1190,6 @@ class JeeMySensorsCmd extends cmd {
                 }
             }
 
-            /**
-             * TODO
-             * 1. AJouter 3 champs sur l'interface de configuration des commandes d'un noeud
-             *      * Type de capteur:  Par défaut à "1 - Paramétrage". Utilité : permettrait de faire autre chose depuis le noeud racine éventuellement.
-             *                          Dans 99% des cas, c'est la valeur 1 que l'on utilisera.
-             *                          A passer dans la variable $command
-             *      * Valeur: Choix de la valeur à envoyer, à passer dans la variable $payload ensuite.
-             *      * Type de donnée: Le type de donnée à envoyer. A passer dans la variable $type
-             *                        Liste déroulante issue de JeeMySensors.api.php::$_api['V'] (index 0 dans chaque entrée avec suffixe '$key - ')
-             *
-             * 2. S'assurer que ces 3 champs sont enregistrés sur la commande. Comme sur le plugin MySensor, on peut les ajouter dans la configuration de la commande:
-             *    config: cmdCommand, payload, cmdType = $type
-             *
-             * 3. Dans cette méthode (execute), s'assurer que ses 3 valeurs sont utilisées.
-             *    On peut éventuellement conserver la compatibilité avec le switch/case du dessus en ajoutant le traitement des données dynamique après
-             *    et seulement si le payload n'est pas vide.
-             *    Quid compatibilité payload avec données dynamique type '#slider#' ou '#color#' ?
-             *
-             * 4. Lors de la création automatique des commandes (inclusion du noeud), configurer automatiquement le cmdType, cmdCommand et peut être payload
-             *
-             * 5. Vérifier que les actions s'affichent bien sur le dashboard à l'affichage.
-             *
-             * (Bonus) 6. Changer l'organisation d'affichage des noeuds sur la page du plugin : 1 ligne par noeud qui liste tous les sensors.
-             */
-
             // node-id ; child-sensor-id ; command ; ack ; type ; payload
             $actions = array (
                 $id_node,                                       // node-id
