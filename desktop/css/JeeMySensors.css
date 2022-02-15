@@ -3,20 +3,24 @@
  */
 
 .eqLogicThumbnailContainer .eqLogicGatewayContentContainer {
-    flex: auto;
+    display: flex;
     text-align: left;
     position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1 0 min-content;
 }
 .eqLogicGatewayContentContainer .eqLogicNodeContainer {
     border-width: 1px !important;
-    border-style: solid !important;
-    border-color: transparent !important;
-    margin: 2px;
+    border-style: dashed !important;
+    border-color: grey !important;
+    margin: 4px;
     /*display: inline-block;*/
     text-align: left !important;
 }
 .eqLogicGatewayContentContainer .eqLogicNodeContainer:hover {
     border-color: black !important;
+    border-style: solid !important;
     background-color: #ECECEC !important;
 }
 .eqLogicGatewayContentContainer .eqLogicNodeContainer .eqLogicDisplayCard {
