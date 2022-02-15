@@ -44,16 +44,22 @@ foreach ($eqLogics as $eqLogic) {
         $idNode = $eqLogic->getConfiguration('id_node');
 
         // Push to sensor array
-        if (!isset($eqLogicSensors[$idNode])) {
-            $eqLogicSensors[$idNode] = [];
+        if (!isset($eqLogicSensors[$idGw][$idNode])) {
+            $eqLogicSensors[$idGw][$idNode] = [];
         }
-        $eqLogicSensors[$idNode][] = $eqLogic;
+        $eqLogicSensors[$idGw][$idNode][] = $eqLogic;
 
         // If node not found, create fake (normally no applied case, but keep this just in case of)
         if (!isset($eqLogicNodes[$idGw][$idNode])) {
             $eqLogicNodes[$idGw][$idNode] = null;
         }
     }
+}
+// Sort gateway
+ksort($eqLogicGateways);
+// Sort node by idNode
+foreach ($eqLogicNodes as $idGw => &$eqLogicNodeList) {
+    ksort($eqLogicNodeList);
 }
 ?>
 
@@ -78,6 +84,8 @@ foreach ($eqLogics as $eqLogic) {
     <?php
     // For each gateway
     foreach ($eqLogicGateways as $eqLogicGateway) {
+        $idGw = $eqLogicGateway->getId();
+
         // Gateway container
         echo '<div class="eqLogicThumbnailContainer">';
 
@@ -94,7 +102,7 @@ foreach ($eqLogics as $eqLogic) {
 
         // Show all nodes from this gateway
         /** @var JeeMySensors $eqLogicNode */
-        foreach ($eqLogicNodes[$eqLogicGateway->getId()] as $idNode => $eqLogicNode) {
+        foreach ($eqLogicNodes[$idGw] as $idNode => $eqLogicNode) {
             // Node container
             echo '<div class="eqLogicNodeContainer">';
 
@@ -110,7 +118,7 @@ foreach ($eqLogics as $eqLogic) {
             }
 
             // Show all sensor from this node
-            foreach ($eqLogicSensors[$idNode] as $eqLogicSensor) {
+            foreach ($eqLogicSensors[$idGw][$idNode] as $eqLogicSensor) {
                 $opacity = ($eqLogicSensor->getIsEnable()) ? '' : 'disableCard';
                 $iconPath = 'plugins/JeeMySensors/plugin_info/JeeMySensors_' . $eqLogicSensor->getConfiguration('id_role') . '.png';
                 echo '<div class="eqLogicDisplayCard jms-sensor cursor '.$opacity.'" data-eqLogic_id="' . $eqLogicSensor->getId() . '">
