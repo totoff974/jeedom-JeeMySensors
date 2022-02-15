@@ -1119,7 +1119,7 @@ class JeeMySensorsCmd extends cmd {
             $id_node = $eqLogic->getConfiguration('id_node');
             $id_sensor = $eqLogic->getConfiguration('id_sensor');
             $command = '1';                                         // 1 -> SET
-            $ack = '0';                                             // ack 0 -> inactif | 1 -> actif
+            $ack = '1';                                             // ack 0 -> inactif | 1 -> actif
             switch ($this->getSubType()) {
                 case 'other':
                     switch ($value[0]) {
