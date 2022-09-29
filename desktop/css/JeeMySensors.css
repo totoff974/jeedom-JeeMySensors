@@ -1,0 +1,36 @@
+/**
+ * JeeMySensors plugin
+ */
+
+.eqLogicThumbnailContainer .eqLogicGatewayContentContainer {
+    display: flex;
+    text-align: left;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1 0 min-content;
+}
+.eqLogicGatewayContentContainer .eqLogicNodeContainer {
+    border-width: 1px !important;
+    border-style: dashed !important;
+    border-color: grey !important;
+    margin: 4px;
+    /*display: inline-block;*/
+    text-align: left !important;
+}
+.eqLogicGatewayContentContainer .eqLogicNodeContainer:hover {
+    border-color: black !important;
+    border-style: solid !important;
+    background-color: #ECECEC !important;
+}
+.eqLogicGatewayContentContainer .eqLogicNodeContainer .eqLogicDisplayCard {
+    display: inline-block;
+}
+.eqLogicGatewayContentContainer .eqLogicNodeContainer .eqLogicDisplayCard.cursor {
+    /*height: auto !important;*/
+}
+.eqLogicGatewayContentContainer .eqLogicNodeContainer .eqLogicDisplayCard.cursor > img {
+    /*width: 50px !important;
+    min-height: auto !important;
+    padding-top: 10px;*/
+}
